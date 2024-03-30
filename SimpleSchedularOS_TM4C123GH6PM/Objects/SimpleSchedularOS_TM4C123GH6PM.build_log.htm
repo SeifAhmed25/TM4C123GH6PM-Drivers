@@ -27,27 +27,6 @@ Project File Date:  03/30/2024
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target 1'
-../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(68): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-   68 |                 state = GPIO_PORTA_BASE_ADDRESS->GPIODATA_REG & (1<< pin);
-      |                       ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
-../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(71): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-   71 |                 state = GPIO_PORTB_BASE_ADDRESS->GPIODATA_REG   & (1<< pin); 
-      |                       ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
-../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(74): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-   74 |                 state= GPIO_PORTC_BASE_ADDRESS->GPIODATA_REG & (1<< pin);
-      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
-../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(77): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
-   77 |                 state = GPIO_PORTD_BASE_ADDRESS->GPIODATA_REG & (1<< pin);
-      |                       ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
-../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(86): warning: variable 'state' may be uninitialized when used here [-Wconditional-uninitialized]
-   86 |         Local_levelType = (state>>pin) & 0x01;
-      |                            ^~~~~
-../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(63): note: initialize the variable 'state' to silence this warning
-   63 |         u8 state;
-      |                 ^
-      |                  = '\0'
-5 warnings generated.
-compiling Dio_prg.c...
 ../../../ARM/3- Video/2-  Systick/CODE/COTS/APP/main.c(14): warning: no previous extern declaration for non-static variable 'g_state' [-Wmissing-variable-declarations]
    14 | StateMachine g_state = STATE1;
       |              ^
@@ -108,6 +87,27 @@ compiling Dio_prg.c...
       |  ^
 11 warnings generated.
 compiling main.c...
+../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(68): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+   68 |                 state = GPIO_PORTA_BASE_ADDRESS->GPIODATA_REG & (1<< pin);
+      |                       ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(71): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+   71 |                 state = GPIO_PORTB_BASE_ADDRESS->GPIODATA_REG   & (1<< pin); 
+      |                       ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(74): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+   74 |                 state= GPIO_PORTC_BASE_ADDRESS->GPIODATA_REG & (1<< pin);
+      |                      ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(77): warning: implicit conversion loses integer precision: 'u32' (aka 'unsigned long') to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+   77 |                 state = GPIO_PORTD_BASE_ADDRESS->GPIODATA_REG & (1<< pin);
+      |                       ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(86): warning: variable 'state' may be uninitialized when used here [-Wconditional-uninitialized]
+   86 |         Local_levelType = (state>>pin) & 0x01;
+      |                            ^~~~~
+../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/DIO/Dio_prg.c(63): note: initialize the variable 'state' to silence this warning
+   63 |         u8 state;
+      |                 ^
+      |                  = '\0'
+5 warnings generated.
+compiling Dio_prg.c...
 ../../../ARM/3- Video/2-  Systick/CODE/COTS/MCAL/IntCtrl/IntCtrl_prg.c(17): warning: In file included from...
 ./COTS/MCAL/IntCtrl/Inc\IntCtrl_int.h(17): warning: In file included from...
 ./COTS/MCAL/IntCtrl/Inc/IntCtrl_types.h(15): warning: non-portable path to file '"Std_Types.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
@@ -385,6 +385,7 @@ compiling IntCtrl_Lcfg.c...
       |                                                                                                  ^
 2 warnings generated.
 compiling Port_Lcfg.c...
+assembling startup_TM4C123.s...
 RTE/Device/TM4C123GH6PM/system_TM4C123.c(13): warning: In file included from...
 C:/Users/seif/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123\TM4C123.h(98): warning: In file included from...
 C:/Users/seif/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123/TM4C123GH6PM.h(298): warning: anonymous unions are a C11 extension [-Wc11-extensions]
@@ -521,7 +522,6 @@ C:/Users/seif/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
       |   ^
 44 warnings generated.
 compiling system_TM4C123.c...
-assembling startup_TM4C123.s...
 linking...
 Program Size: Code=4794 RO-data=682 RW-data=28 ZI-data=616  
 ".\Objects\SimpleSchedularOS_TM4C123GH6PM.axf" - 0 Error(s), 130 Warning(s).
@@ -553,7 +553,7 @@ Package Vendor: Keil
       Source file:   Device/Source/system_TM4C123.c
       Include file:  Device/Include/TM4C123/TM4C123.h
       Source file:   Device/Source/ARM/startup_TM4C123.s
-Build Time Elapsed:  00:00:13
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

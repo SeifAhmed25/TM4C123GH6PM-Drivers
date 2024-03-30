@@ -119,6 +119,26 @@
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
+          <Key>ARMRTXEVENTFLAGS</Key>
+          <Name>-L70 -Z18 -C0 -M0 -T1</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DLGTARM</Key>
+          <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>ARMDBGFLAGS</Key>
+          <Name></Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>lmidk-agdi</Key>
+          <Name>-U-O4622 -O4622 -S3 -FO29</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
           <Key>UL2CM3</Key>
           <Name>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0TM4C123_256 -FS00 -FL040000 -FP0($$Device:TM4C123GH6PM$Flash\TM4C123_256.FLM))</Name>
         </SetRegEntry>
@@ -130,12 +150,12 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
         <aPa>0</aPa>
-        <viewmode>0</viewmode>
+        <viewmode>1</viewmode>
         <vrSel>0</vrSel>
         <aSym>0</aSym>
         <aTbox>0</aTbox>
@@ -144,7 +164,7 @@
         <AscS3>0</AscS3>
         <aSer3>0</aSer3>
         <eProf>0</eProf>
-        <aLa>0</aLa>
+        <aLa>1</aLa>
         <aPa1>0</aPa1>
         <AscS4>0</AscS4>
         <aSer4>0</aSer4>
@@ -166,6 +186,28 @@
       <pszMrulep></pszMrulep>
       <pSingCmdsp></pSingCmdsp>
       <pMultCmdsp></pMultCmdsp>
+      <LogicAnalyzers>
+        <Wi>
+          <IntNumber>0</IntNumber>
+          <FirstString>((((*(volatile long*)(0x40025000) &amp; 0x1) &gt;&gt; 0 &amp; 0x1) &gt;&gt; 0 &amp; 0x1) &gt;&gt; 0 &amp; 0x2) &gt;&gt; 1</FirstString>
+          <SecondString>FF000000000000000000E0410000C0FFFFFFDF41000000000000000000000000000000002828282A28766F6C6174696C65206C6F6E672A2928307834303032353030302920262030783129203E3E203020262030783129203E3E203020262030783129203E3E203000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000000000000A0C73F1A0000000000000000000000000000000000000038030000</SecondString>
+        </Wi>
+        <Wi>
+          <IntNumber>1</IntNumber>
+          <FirstString>((((*(volatile long*)(0x40025000) &amp; 0x2) &gt;&gt; 0 &amp; 0x2) &gt;&gt; 0 &amp; 0x2) &gt;&gt; 2 &amp; 0x4) &gt;&gt; 2</FirstString>
+          <SecondString>00800000000000000000E0410000C0FFFFFFDF41000000000000000000000000000000002828282A28766F6C6174696C65206C6F6E672A2928307834303032353030302920262030783229203E3E203020262030783229203E3E203020262030783229203E3E20320000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000002000000000000000020CC3F1A0000000000000000000000000000000000000038030000</SecondString>
+        </Wi>
+        <Wi>
+          <IntNumber>2</IntNumber>
+          <FirstString>((((*(volatile long*)(0x40025000) &amp; 0x4) &gt;&gt; 0 &amp; 0x4) &gt;&gt; 0 &amp; 0x4) &gt;&gt; 0 &amp; 0x8) &gt;&gt; 3</FirstString>
+          <SecondString>00008000000000000000E0410000C0FFFFFFDF41000000000000000000000000000000002828282A28766F6C6174696C65206C6F6E672A2928307834303032353030302920262030783429203E3E203020262030783429203E3E203020262030783429203E3E20300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000003000000000000000010D13F1A0000000000000000000000000000000000000038030000</SecondString>
+        </Wi>
+        <Wi>
+          <IntNumber>3</IntNumber>
+          <FirstString>((((*(volatile long*)(0x40025000) &amp; 0x4) &gt;&gt; 0 &amp; 0x4) &gt;&gt; 0 &amp; 0x8) &gt;&gt; 0 &amp; 0x10) &gt;&gt; 4</FirstString>
+          <SecondString>00000000000000000000E0410000C0FFFFFFDF41000000000000000000000000000000002828282A28766F6C6174696C65206C6F6E672A2928307834303032353030302920262030783429203E3E203020262030783429203E3E203020262030783829203E3E20300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000004000000000000000010D53F1A0000000000000000000000000000000000000038030000</SecondString>
+        </Wi>
+      </LogicAnalyzers>
     </TargetOption>
   </Target>
 
@@ -223,7 +265,7 @@
       <GroupNumber>2</GroupNumber>
       <FileNumber>4</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\..\ARM\3- Video\2-  Systick\CODE\COTS\MCAL\PORT\Port_prg.c</PathWithFileName>

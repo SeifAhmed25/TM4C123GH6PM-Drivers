@@ -2,29 +2,37 @@
 #include "Port_int.h"
 #include "Dio_int.h" 
 #include "Systick_int.h" 
-/*Definitions*/
+
+/* Definitions */
 #define RED_LED PORT_PF1 
 #define BLUE_LED PORT_PF2
 #define GREEN_LED PORT_PF3 
-#define PUSH_BUTTON1 PORT_PF4
+#define PUSH_BUTTON1 PORT_PF4 
+#define MINIMUM_PERIODICITY 0.5
+#define PERIODICITY(N) (u8)(N*(1.0/MINIMUM_PERIODICITY))
+
 StateMachine g_state = STATE1;
 extern const Port_ConfigType PORT_Config_Arr[PORT_PINS_CONFIG_ARR_SIZE];
-/*CallBack Function*/
+
+/* CallBack Function */
 void SysTickCallback_ServeTasks(void); 
-/*Tasks Functions Prototypes*/
+
+/* Tasks Functions Prototypes */
 void Task1_Each1Sec(void);  
 void Task2_Each500mSec(void); 
 void Task3_Each3Sec(void); 
-/*Struct Defining 3 aspects for every task*/
-typedef struct{
-	u8 Priority; /*Starting from 1, lower is higher priority*/ 
-	u8 Periodicity; /*in seconds*/
+
+/* Struct Defining 3 aspects for every task */
+typedef struct {
+	u8 Priority; /* Starting from 1, lower is higher priority */ 
+	u8 Periodicity; /* in seconds */
 	void (*ptr)(void);  
-}Task_Aspect;  
-/*Object for each task*/
-Task_Aspect Task1 = {1, 1, Task1_Each1Sec};
-Task_Aspect Task2 = {2, 2, Task2_Each500mSec};
-Task_Aspect Task3 = {3, 3, Task3_Each3Sec}; 
+} Task_Aspect;  
+
+/* Object for each task */
+Task_Aspect Task1 = {1, PERIODICITY(1), Task1_Each1Sec};
+Task_Aspect Task2 = {2, PERIODICITY(0.5), Task2_Each500mSec};
+Task_Aspect Task3 = {3, PERIODICITY(3), Task3_Each3Sec}; 
 int main()
 {
 	  /*Initializing PF4 PB1, PF1 RED LIGHT, PF2 BLUE LIGHT, PF3 GREEN LIGHT*/
