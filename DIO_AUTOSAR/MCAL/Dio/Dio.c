@@ -12,9 +12,9 @@
  ****************************************************************/
  /****************************************************************
 	Service name		: Dio_ReadChannel 
-	syntax 				: Dio_LevelType Dio_ReadChannel(
-							Dio_ChannelType ChannelId
-						  )
+	syntax 		        : Dio_LevelType Dio_ReadChannel(
+				      Dio_ChannelType ChannelId
+				  )
 	Service ID [hex]	: 0x00  
 	Synch/Asynch     	: Synchronouse
 	Reentrance       	: Reentrant 
@@ -54,12 +54,11 @@ Dio_LevelType Dio_ReadChannel(Dio_ChannelType ChannelId){
 } 
 /**************************************************************** 
 	Service name		: Dio_WriteChannel 
-	syntax 				: void Dio_WriteChannel(
-							Dio_ChannelType ChannelId,
-							Dio_LevelType Level
-						  )
-	Service ID			: 0x01   
-	Description : write the pin   
+	syntax 			: void Dio_WriteChannel(
+					Dio_ChannelType ChannelId,
+					Dio_LevelType Level
+				  )
+	Service ID		: 0x01     
 	Synch/Asynch     	: Synchronouse
 	Reentrance       	: Reentrant 
 	Parameters (in)  	: ChannelId (ID of DIO channel),
@@ -127,9 +126,9 @@ void Dio_WriteChannel(Dio_ChannelType ChannelId , Dio_LevelType Level){
 }
 /****************************************************************
 	Service name		: Dio_ReadPort
-	syntax 				: Dio_PortLevelType Dio_ReadPort(
-							Dio_PortType PortId
-						  )
+	syntax 			: Dio_PortLevelType Dio_ReadPort(
+					Dio_PortType PortId
+				  )
 	Service ID [hex] 	: 0x02 
 	Synch/Asynch     	: Synchronouse
 	Reentrancy       	: Reentrant 
@@ -166,10 +165,10 @@ Dio_PortLevelType Dio_ReadPort(Dio_PortType PortID){
 }
 /***************************************************************** 
 	Service name		: Dio_WritePort
-	syntax 				: void Dio_WritePort(
-							Dio_PortType PortId,
-							Dio_PortLevelType Level
-						  )
+	syntax 			: void Dio_WritePort(
+					Dio_PortType PortId,
+					Dio_PortLevelType Level
+				  )
 	Service ID[hex]		: 0x03  
 	Synch/Asynch     	: Synchronouse
 	Reentrance       	: Reentrant 
@@ -205,9 +204,9 @@ void Dio_WritePort(Dio_PortType PortId,Dio_PortLevelType Level){
 } 
 /****************************************************************
 	Service name		: Dio_ReadChannelGroup
-	syntax 				: Dio_PortLevelType Dio_ReadChannelGroup(
-							const Dio_ChannelGroupType* ChannelGroupIdPtr
-						  )
+	syntax 			: Dio_PortLevelType Dio_ReadChannelGroup(
+					const Dio_ChannelGroupType* ChannelGroupIdPtr
+				  )
 	Service ID[hex]		: 0x04
 	Synch/Asynch     	: Synchronouse
 	Reentrance       	: Reentrant 
@@ -250,16 +249,16 @@ Dio_PortLevelType Dio_ReadChannelGroup(const Dio_ChannelGroupType* ChannelGroupI
 } 
 /*****************************************************************
 	Service name		: Dio_WriteChannelGroup
-	syntax 				: void Dio_WriteChannelGroup(
-							const Dio_ChannelGroupType* ChannelGroupIdPtr,
-							Dio_PortLevelType Level
-						  ) 
+	syntax 			: void Dio_WriteChannelGroup(
+					const Dio_ChannelGroupType* ChannelGroupIdPtr,
+					Dio_PortLevelType Level
+				  ) 
 	Service ID[hex]		: 0x05
 	Synch/Asynch     	: Synchronouse
 	Reentrance       	: Reentrant 
 	Parameters (in)  	: ChannelGroupPtr (Pointer to ChannelGroup)
-						  Level (Value to be Written)
-	Parameters (inout): none 
+				  Level           (Value to be Written)
+	Parameters (inout)      : none 
 	Parameters (out)	: none
 	Return Value     	: none   
 	Description 		: Service to set a subset of the adjoining bits of a port to a specified level.
@@ -289,9 +288,9 @@ void Dio_WriteChannelGroup (const Dio_ChannelGroupType* ChannelGroupIdPtr,Dio_Po
 }
 /****************************************************************
 	Service name		: Dio_FlipChannel
-	Syntax 				: Dio_LevelType Dio_FlipChannel(
-							Dio_ChannelType channelId
-						  )
+	Syntax 			: Dio_LevelType Dio_FlipChannel(
+					Dio_ChannelType channelId
+				  )
 	Service ID[hex]		: 0x011
 	Synch/Asynch     	: Synchronouse
 	Reentrance       	: Reentrant 
